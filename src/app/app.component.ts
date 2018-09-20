@@ -6,18 +6,10 @@ import { ProductService } from '../services/product.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit{
+export class AppComponent{
   title = 'frontend';
   p
 
-  constructor(private pService: ProductService){
-    
-    
-    
-  }
-
-  async ngOnInit(){
-    this.p = await this.pService.getAll()
-    console.log('en componente',this.p)
+  constructor(){
   }
 }
