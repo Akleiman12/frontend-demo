@@ -1,0 +1,38 @@
+<ng-container>
+  <div class="card search-bar border border-dark">
+    <div class="card-body">
+      <form>
+
+      </form>
+    </div>
+  </div>
+
+</ng-container>
+<ng-container *ngIf="products">
+<div class="card tb border border-dark">
+  <div class="card-body">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Inventory</th>
+        <th scope="col">Edit</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <ng-container *ngFor="let prod of products">
+          <tr>
+              <th scope="row">{{ products.indexOf(prod)+1 }}</th>
+              <td>{{ prod.name || "N/A"}}</td>
+              <td>{{ prod.inventory || 0}}</td>
+              <td><button type="button" class="btn btn-primary" (click)="onEdit(prod)">Edit</button></td>
+              <td><button type="button" class="btn btn-danger" (click)="onDelete(prod)">Delete</button></td>
+            </tr>
+      </ng-container>
+    </tbody>
+  </table>
+  </div>
+  </div>
+</ng-container>
