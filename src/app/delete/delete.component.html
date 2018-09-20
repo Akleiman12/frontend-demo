@@ -1,3 +1,32 @@
-<p>
-  delete works!
-</p>
+<div class="container">
+  <div class="row out">
+    <h1>Are you sure you want to delete the following product?</h1>
+  </div>
+  <ng-container *ngIf="product">
+    <div class="row justify-content-md-center">
+      <div class="card">
+        <div class="card-body">
+          <div class="row justify-content-md-center">
+            <h2>{{product.name}}</h2>
+          </div>
+          <br>
+          <br>
+          <div class="row justify-content-md-center">
+            <div class="col col-2">
+              <p>Inv.: {{product.inventory || 0}}</p>
+            </div>
+            <div class="col col-2">
+              <p>Price: ${{product.price || 0}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+  <br>
+  <div class="row justify-content-md-center">
+    <button type="button" class="btn btn-danger" (click)="onDelete()">Delete</button>
+    <span></span>
+    <button type="button" class="btn btn-secondary" (click)="onCancel()">Cancel</button>
+  </div>
+</div>

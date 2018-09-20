@@ -1,0 +1,21 @@
+.container{
+    margin-top: 5vh;
+}
+
+h1{
+    text-align: center;
+    color: whitesmoke
+}
+
+.row.out{
+    margin-right: 15vw;
+    margin-left: 15vw;
+}
+
+.card{
+    min-width: 50vw;
+}
+
+span{
+    min-width: 10px;
+}
