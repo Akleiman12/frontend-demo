@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../../services/product.service';
 import { Product } from '../../models/product';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-list',
@@ -11,18 +12,22 @@ export class ListComponent implements OnInit {
 
   public products: Product[]
 
-  constructor(private productService: ProductService) { }
+  constructor(private productService: ProductService, private router: Router) { }
 
   async ngOnInit() {
     this.products = await this.productService.getAll()
   }
 
+  public onCreate(){
+    this.router.navigate(['create'])
+  }
+
   public onEdit(prod: Product){
-    console.log('onedit', prod._id)
+    this.router.navigate(['update',prod._id])
   }
 
   public onDelete(prod: Product){
-    console.log('onDelete', prod._id)
+    this.router.navigate(['delete',prod._id])
   }
 
 }
