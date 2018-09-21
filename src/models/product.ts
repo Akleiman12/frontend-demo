@@ -3,5 +3,5 @@ export interface Product {
     name: string,
     inventory: number,
     price: number,
-    img: string
+    img: string | any
 }

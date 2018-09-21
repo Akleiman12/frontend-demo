@@ -19,3 +19,7 @@ h1{
 span{
     min-width: 10px;
 }
+
+.col{
+    text-align: center
+}

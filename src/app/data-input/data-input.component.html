@@ -1,3 +1,35 @@
-<p>
-  data-input works!
-</p>
+<div class="container">
+    <div class="card">
+      <div class="card-body">
+        <div class="row justify-content-md-center">
+          <h3>Product Data Input</h3>
+        </div>
+        <ng-container *ngIf="product">
+        <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+          <div class="form-row">
+            <div class="col">
+              <label for="name">Name</label>
+              <input type="text" class="form-control" id="name" [value]="product?.name" formControlName="name" [(ngModel)]="product.name">
+            </div>
+            <div class="col">
+              <label for="inventory">Inventory</label>
+              <input type="number" class="form-control" id="inventory" [value]="product?.inventory" formControlName="inventory" [(ngModel)]="product.inventory">
+            </div>
+          </div>
+          <div class="form-row">
+              <div class="col">
+                <label for="price">Price</label>
+                <input type="number" class="form-control" id="price" [value]="product?.price" formControlName="price" [(ngModel)]="product.price">
+              </div>
+              <div class="col">
+                <label for="img">Image</label>
+                <input type="file" class="form-control" id="img" (change)="onFileChanged($event)">
+              </div>
+            </div>
+          <br>
+            <button type="submit" class="btn btn-success">Submit</button>
+        </form>
+        </ng-container>
+      </div>
+    </div>
+</div>

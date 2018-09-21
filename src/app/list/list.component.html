@@ -1,9 +1,7 @@
 <ng-container>
   <div class="card search-bar border border-dark">
     <div class="card-body">
-      <form>
-
-      </form>
+      <input type=""
     </div>
   </div>
 
@@ -24,7 +22,7 @@
     </thead>
     <tbody>
       <ng-container *ngFor="let prod of products">
-          <tr>
+          <tr (click)="details(prod)">
               <th scope="row">{{ products.indexOf(prod)+1 }}</th>
               <td>{{ prod.name || "N/A"}}</td>
               <td>{{ prod.inventory || 0}}</td>

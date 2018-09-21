@@ -27,11 +27,21 @@ export class ProductService {
     return this.http.get(urlBase+'product/get/'+param+'/'+val).toPromise() as Promise<Product[]>
   }
 
+  async create(input: Product): Promise<Product>{
+    return this.http.post(urlBase+'product/create/', input).toPromise() as Promise<Product>
+  }
+
   async edit(id: string, input: Product): Promise<Product>{
     return this.http.post(urlBase+'product/edit/'+id, input).toPromise() as Promise<Product>
   }
 
   async delete(id: string): Promise<Product>{
     return this.http.get(urlBase+'product/delete/'+id).toPromise() as Promise<Product>
+  }
+
+  async uploadImg(file: File) {
+    const uploadData = new FormData();
+    uploadData.append('file', file, file.name);
+    return this.http.post(urlBase+'upload', uploadData).toPromise() as Promise<any>
   }
 }

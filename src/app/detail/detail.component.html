@@ -1,3 +1,27 @@
-<p>
-  detail works!
-</p>
+
+<ng-container *ngIf="product">
+  <div class="container">
+    <div class="card">
+      <div class="card-body">
+          <div class="row justify-content-md-center">
+              <h3>{{ product?.name }}</h3>
+          </div>
+          <br>
+          <div class="row justify-content-md-center">
+              <img src="{{ image }}">
+          </div>
+          <div class="row justify-content-md-center">
+              <div class="col col-4">
+                Inventory: {{ product?.inventory }}
+              </div>
+              <div class="col col-4">
+                Price: {{ product?.price }}
+              </div>
+          </div>
+          <div class="row justify-content-md-center">
+            <button type="button" class="btn btn-primary" (click)="onBack()">Back</button>
+          </div>
+      </div>
+    </div>
+  </div>
+</ng-container>

@@ -30,4 +30,8 @@ export class ListComponent implements OnInit {
     this.router.navigate(['delete',prod._id])
   }
 
+  public details(prod: Product){
+    this.router.navigate(['detail',prod._id])
+  }
+
 }
