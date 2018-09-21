@@ -1,27 +1,31 @@
-# Frontend
+# Frontend Demo for SweetCherry Tech
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.1.5.
+This project is a test presentation for SweetCherry Tech. There are two repositories for this project: frontend-sct and backend-sct; both are needed to see the whole proyect working.
 
-## Development server
+##Requirements
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+To serve the whole project you'll need Node.js, npm (comes with Node.js) and Angular 4 to be installed in the system. Common CLI commands of these technologies are used for serving the project. See versions 
 
-## Code scaffolding
+##Serve
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+First it is needed to install dependencies with
+```
+npm install
+```
+on both backend-sct and frontend-sct
 
-## Build
+To be able to run the project, first run backend-sct with 
+```
+npm run start
+```
+then start frontend-sct with
+```
+ng serve
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+This should be enough to run these projects
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+##Database
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+The database used for this project is hosted in mLab.com, no further configuration is required. Although, this means the same database will be used for all instances of this project.
